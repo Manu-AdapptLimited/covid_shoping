@@ -12,6 +12,7 @@ class CartScreen extends StatelessWidget {
     final cart = Provider.of<Cart>(context);
     return Scaffold(
       appBar: AppBar(
+         backgroundColor: Colors.redAccent,
         title: Text("My Cart"),
       ),
       body: Column(
