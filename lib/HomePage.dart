@@ -134,7 +134,9 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: EdgeInsets.all(12.0),
               //shop body
-              child: Container(height: 400.0, child: ShopPage()),
+              child: Container(
+                // height: 400.0, 
+                child: ShopPage()),
             ),
           ],
         ));

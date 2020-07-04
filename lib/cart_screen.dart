@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/HomePage.dart';
 import 'package:my_app/Model/Cart.dart';
+// import 'package:my_app/ShopItem.dart';
 import 'package:my_app/cart_item.dart';
 import 'package:provider/provider.dart';
 
@@ -26,13 +28,29 @@ class CartScreen extends StatelessWidget {
                       cart.items.values.toList()[i].quantity,
                     )),
           ),
-          FlatButton(
-              color: Colors.redAccent,
-              onPressed: () {},
-              child: Text(
-                "Chechout",
-                style: TextStyle(fontSize: 20.0, color: Colors.white),
-              ))
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              FlatButton(
+                  color: Colors.redAccent,
+                  onPressed: () {
+                    cart.clear();
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
+                  },
+                  child: Text(
+                    "ClearAll",
+                    style: TextStyle(fontSize: 20.0, color: Colors.white),
+                  )),
+              FlatButton(
+                  color: Colors.redAccent,
+                  onPressed: () {},
+                  child: Text(
+                    "Payment",
+                    style: TextStyle(fontSize: 20.0, color: Colors.white),
+                  )),
+            ],
+          )
         ],
       ),
     );

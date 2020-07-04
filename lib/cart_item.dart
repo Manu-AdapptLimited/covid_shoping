@@ -49,7 +49,10 @@ class CartPdt extends StatelessWidget {
                       onPressed: () {
                         Provider.of<Cart>(context, listen: false)
                             .removeSingleItem(productid);
-                      }),
+
+                      },
+                      color:Colors.red
+                      ),
                 ],
               ),
             )),
