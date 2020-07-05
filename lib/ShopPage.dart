@@ -44,33 +44,31 @@ class Single_Shop extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Card(
-        child: Hero(
-            tag: shop_name,
-            child: Material(
-                child: InkWell(
-              //passing data to another page
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ShopItem(
-                        shop_item_name: shop_name,
-                      ))),
-              child: GridTile(
-                footer: Container(
-                  color: Colors.white70,
-                  child: ListTile(
-                    leading: Text(shop_name,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20.0,
-                        )),
-                  ),
+    return Card(
+      child: Hero(
+          tag: shop_name,
+          child: Material(
+              child: InkWell(
+            //passing data to another page
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ShopItem(
+                      shop_item_name: shop_name,
+                    ))),
+            child: GridTile(
+              footer: Container(
+                color: Colors.white70,
+                child: ListTile(
+                  leading: Text(shop_name,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.0,
+                      )),
                 ),
-                child: Image.asset(shop_picture, fit: BoxFit.cover),
               ),
-            ))),
-      ),
+              child: Image.asset(shop_picture, fit: BoxFit.cover),
+            ),
+          ))),
     );
   }
 }

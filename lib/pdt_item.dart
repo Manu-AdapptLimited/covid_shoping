@@ -6,10 +6,12 @@ import './Model/Cart.dart';
 class PdtItem extends StatelessWidget {
   final String name;
   final String image;
+  final double price;
 
   PdtItem({
     this.image,
     this.name,
+    this.price,
   });
   @override
   Widget build(BuildContext context) {
@@ -18,18 +20,27 @@ class PdtItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GridTile(
+
         child: Image.asset(image),
         footer: GridTileBar(
+          
           title: Text(
             name,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.black,
+            ),
           ),
+          subtitle: Text("\Rs$price",style: TextStyle(
+            color: Colors.black
+          ),),
           trailing: IconButton(
-              icon: Icon(Icons.shopping_cart),
+              icon: Icon(Icons.add_shopping_cart),
+              color: Colors.black,
+              iconSize: 40.0,
+
               onPressed: () {
                 cart.addItem(pdt.id, pdt.name, pdt.price, pdt.img);
               }),
-              backgroundColor: Colors.black54,
+          backgroundColor: Colors.white70,
         ),
       ),
     );

@@ -42,19 +42,9 @@ class _ShopItemState extends State<ShopItem> {
       ),
       body: ListView(
         children: <Widget>[
-          // Container(
-          //   color: Colors.redAccent,
-          //   alignment: Alignment.topCenter,
-          //   height: 35.0,
-          //   child: Text(
-          //     widget.shop_item_name,
-          //     style: TextStyle(fontSize: 25.0, color: Colors.white),
-          //   ),
-          // ),
           Padding(
             padding: EdgeInsets.all(12.0),
             child: Container(
-              // height: 400.0,
               child: AllProduct(),
             ),
           )
