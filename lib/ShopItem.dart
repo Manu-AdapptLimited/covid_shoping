@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/Cart_header.dart';
 import 'package:my_app/cart_screen.dart';
 import 'AllProduct.dart';
+import 'EmptyCart.dart';
 
 class ShopItem extends StatefulWidget {
   final shop_item_name;
@@ -34,8 +36,10 @@ class _ShopItemState extends State<ShopItem> {
               color: Colors.white,
             ),
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => CartScreen()));
+              // Navigator.push(context,
+              //     MaterialPageRoute(builder: (context) => CartScreen()));
+              
+               Navigator.push(context, MaterialPageRoute(builder: (context)=>CartHeader()));
             },
           )
         ],

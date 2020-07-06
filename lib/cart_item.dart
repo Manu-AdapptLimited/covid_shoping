@@ -27,6 +27,16 @@ class CartPdt extends StatelessWidget {
         color: Colors.red,
       ),
       onDismissed: (direction) {
+         Scaffold.of(context).showSnackBar(SnackBar(
+                  content: Text(
+                    "Item Removed from Your Cart",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  duration: Duration(seconds: 1),
+                  backgroundColor: Colors.black,
+                ));
         Provider.of<Cart>(context, listen: false).removeItem(productid);
       },
       child: Card(
@@ -47,6 +57,16 @@ class CartPdt extends StatelessWidget {
                   IconButton(
                       icon: Icon(Icons.delete),
                       onPressed: () {
+                         Scaffold.of(context).showSnackBar(SnackBar(
+                  content: Text(
+                    "One Item Removed From Your Cart",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  duration: Duration(seconds: 1),
+                  backgroundColor: Colors.black,
+                ));
                         Provider.of<Cart>(context, listen: false)
                             .removeSingleItem(productid);
 

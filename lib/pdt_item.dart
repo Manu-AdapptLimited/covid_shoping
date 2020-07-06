@@ -20,24 +20,33 @@ class PdtItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GridTile(
-
         child: Image.asset(image),
         footer: GridTileBar(
-          
           title: Text(
             name,
-            style: TextStyle(color: Colors.black,
+            style: TextStyle(
+              color: Colors.black,
             ),
           ),
-          subtitle: Text("\Rs$price",style: TextStyle(
-            color: Colors.black
-          ),),
+          subtitle: Text(
+            "\Rs$price",
+            style: TextStyle(color: Colors.black),
+          ),
           trailing: IconButton(
               icon: Icon(Icons.add_shopping_cart),
               color: Colors.black,
               iconSize: 40.0,
-
               onPressed: () {
+                Scaffold.of(context).showSnackBar(SnackBar(
+                  content: Text(
+                    "Item Added To Your Cart",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  duration: Duration(seconds: 1),
+                  backgroundColor: Colors.black,
+                ));
                 cart.addItem(pdt.id, pdt.name, pdt.price, pdt.img);
               }),
           backgroundColor: Colors.white70,

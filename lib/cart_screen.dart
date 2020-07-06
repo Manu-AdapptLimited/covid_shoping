@@ -11,10 +11,10 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final cart = Provider.of<Cart>(context);
     return Scaffold(
-      appBar: AppBar(
-         backgroundColor: Colors.redAccent,
-        title: Text("My Cart"),
-      ),
+      // appBar: AppBar(
+      //    backgroundColor: Colors.redAccent,
+      //   title: Text("My Cart"),
+      // ),
       body: Column(
         children: <Widget>[
           Expanded(
@@ -30,7 +30,7 @@ class CartScreen extends StatelessWidget {
                     )),
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               FlatButton(
                   color: Colors.redAccent,
@@ -40,8 +40,8 @@ class CartScreen extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => HomePage()));
                   },
                   child: Text(
-                    "ClearAll",
-                    style: TextStyle(fontSize: 20.0, color: Colors.white),
+                    "Empty Cart",
+                    style: TextStyle(fontSize: 20.0,  color: Colors.white),
                   )),
               FlatButton(
                   color: Colors.redAccent,

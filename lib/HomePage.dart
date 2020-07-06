@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/Cart_header.dart';
+import 'package:my_app/EmptyCart.dart';
 import 'package:my_app/cart_screen.dart';
 import 'ShopPage.dart';
 
@@ -29,7 +31,8 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.white,
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
+                // Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CartHeader()));
               },
             )
           ],
