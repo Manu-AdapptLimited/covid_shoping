@@ -28,7 +28,7 @@ class Cart with ChangeNotifier {
           (existingCartItem) => CartItem(
               id: DateTime.now().toString(),
               name: existingCartItem.name,
-              quantity: existingCartItem.quantity + 1,
+              quantity: existingCartItem.quantity,
               price: existingCartItem.price,
               image: existingCartItem.image));
     } else {
@@ -72,4 +72,45 @@ class Cart with ChangeNotifier {
     _items = {};
     notifyListeners();
   }
+  void increament(String pdtid, String name, double price, String image) {
+    if (_items.containsKey(pdtid)) {
+      _items.update(
+          pdtid,
+          (existingCartItem) => CartItem(
+              id: DateTime.now().toString(),
+              name: existingCartItem.name,
+              quantity: existingCartItem.quantity+1,
+              price: existingCartItem.price,
+              image: existingCartItem.image));
+    } else {
+      _items.putIfAbsent(
+          pdtid,
+          () => CartItem(
+                name: name,
+                id: DateTime.now().toString(),
+                quantity: 1,
+                price: price,
+                image: image,
+              ));
+    }
+    notifyListeners();
+  }
+  void decreament(String pdtid, String name, double price, String image) {
+    if (_items.containsKey(pdtid)) {
+      _items.update(
+          pdtid,
+          (existingCartItem) => CartItem(
+              id: DateTime.now().toString(),
+              name: existingCartItem.name,
+              quantity: existingCartItem.quantity-1,
+              price: existingCartItem.price,
+              image: existingCartItem.image));
+    } 
+    if(_items[pdtid].quantity ==0 ){
+      _items.remove(pdtid);
+
+    }
+    notifyListeners();
+  }
+
   }
