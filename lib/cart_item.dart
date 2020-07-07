@@ -62,7 +62,15 @@ class CartPdt extends StatelessWidget {
                   Provider.of<Cart>(context, listen: false).decreament(productid,name,price, image);
                 },
               )),
-              Text('$quantity x'),
+              Container(
+                alignment:Alignment.center,
+                width: 30.0,
+                height: 30.0,
+                color: Colors.blueGrey,
+                child: Text('$quantity',style: TextStyle(
+                  color: Colors.white,
+                ),)
+                ),
               Expanded(
                   child: IconButton(icon: Icon(Icons.add), onPressed: () {
                     Provider.of<Cart>(context, listen: false).increament(productid,name,price, image);

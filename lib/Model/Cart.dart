@@ -28,7 +28,7 @@ class Cart with ChangeNotifier {
           (existingCartItem) => CartItem(
               id: DateTime.now().toString(),
               name: existingCartItem.name,
-              quantity: existingCartItem.quantity,
+              quantity: existingCartItem.quantity+1,
               price: existingCartItem.price,
               image: existingCartItem.image));
     } else {
