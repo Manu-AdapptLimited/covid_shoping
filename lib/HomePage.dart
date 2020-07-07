@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/Cart_header.dart';
-import 'package:my_app/EmptyCart.dart';
-import 'package:my_app/cart_screen.dart';
+// import 'package:my_app/EmptyCart.dart';
+// import 'package:my_app/cart_screen.dart';
 import 'ShopPage.dart';
 
 class HomePage extends StatefulWidget {
+  // String title = "ShopApp";
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  String title = "Shop";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           elevation: 0.0,
           backgroundColor: Colors.redAccent,
-          title: Text('ShopApp'),
+          title: Text(title),
+          // title: Text(widget.title),
           actions: <Widget>[
             IconButton(
               icon: Icon(
@@ -32,7 +35,8 @@ class _HomePageState extends State<HomePage> {
               ),
               onPressed: () {
                 // Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>CartHeader()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CartHeader()));
               },
             )
           ],
@@ -55,7 +59,10 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(color: Colors.redAccent),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => HomePage()));
+                },
                 child: ListTile(
                   title: Text('Home'),
                   leading: Icon(
@@ -124,22 +131,20 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 color: Colors.blue,
                 alignment: Alignment.topCenter,
-                child: Text(
-                  "SHOPS",
-                  style: TextStyle(
-                    fontSize: 25.0,
-                    color: Colors.white,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
+                // child: Text(
+                //   "SHOPS",
+                //   style: TextStyle(
+                //     fontSize: 25.0,
+                //     color: Colors.white,
+                //     fontStyle: FontStyle.italic,
+                //   ),
+                // ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 0.0),
               //shop body
-              child: Container(
-                // height: 400.0, 
-                child: ShopPage()),
+              child: Container(child: ShopPage()),
             ),
           ],
         ));

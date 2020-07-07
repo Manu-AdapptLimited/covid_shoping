@@ -56,14 +56,15 @@ class Single_Shop extends StatelessWidget {
                     ))),
             child: GridTile(
               footer: Container(
+                
                 color: Colors.white70,
                 child: ListTile(
                   leading: Text(shop_name,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20.0,
-                      )),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0,
+                        )),
                 ),
               ),
               child: Image.asset(shop_picture, fit: BoxFit.cover),
