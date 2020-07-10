@@ -4,6 +4,7 @@ import 'package:my_app/cart_screen.dart';
 import 'package:provider/provider.dart';
 import 'HomePage.dart';
 import 'Model/Cart.dart';
+import 'Screens/RegistrationScreen.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -12,14 +13,15 @@ void main() {
       ChangeNotifierProvider.value(value: Cart())
     ],
     child: MaterialApp(
+     
       debugShowCheckedModeBanner: false,
 
       theme: ThemeData(
-        primaryColor: Colors.redAccent,
+        primaryColor: Colors.white,
       ),
       title: 'ShopApp',
 
-      home: HomePage(),
+      home: RegistrationScreen(),
       // routes: {
       //   CartScreen.routeName:(ctx)=>CartScreen(),
       // },
