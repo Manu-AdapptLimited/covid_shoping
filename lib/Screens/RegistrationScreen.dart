@@ -1,16 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/Screens/LoginScreen.dart';
 
 class RegistrationScreen extends StatelessWidget {
-  final _emailController=TextEditingController();
-  final _passController=TextEditingController();
-  final _nameController=TextEditingController();
-  final _imageController=TextEditingController();
+  final _emailController = TextEditingController();
+  final _passController = TextEditingController();
+  final _nameController = TextEditingController();
+  final _imageController = TextEditingController();
+
+  // Future<bool> registerUser(
+  //     String email, String pass, String name, String url) async {
+  //   FirebaseAuth _auth = FirebaseAuth.instance;
+  //   try {
+  //     AuthResult result = await _auth.createUserWithEmailAndPassword(
+  //         emai: email, password: pass);
+  //     FirebaseUser user = result.User;
+  //     UserUpdateInfo info = UserUpdateInfo();
+  //     info.displayName = name;
+  //     info.photoUrl = url;
+  //     user.updateProfile(info);
+  //     return true;
+  //   } catch (e) {
+  //     print(e);
+  //     return false;
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-              child: SingleChildScrollView(
+        child: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.all(32),
             child: Form(
@@ -32,7 +51,8 @@ class RegistrationScreen extends StatelessWidget {
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.transparent),
-                          borderRadius: BorderRadius.all(Radius.circular(15.0))),
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(15.0))),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.greenAccent),
                         borderRadius: BorderRadius.all(Radius.circular(15.0)),
@@ -53,7 +73,8 @@ class RegistrationScreen extends StatelessWidget {
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.transparent),
-                          borderRadius: BorderRadius.all(Radius.circular(15.0))),
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(15.0))),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.greenAccent),
                         borderRadius: BorderRadius.all(Radius.circular(15.0)),
@@ -74,7 +95,8 @@ class RegistrationScreen extends StatelessWidget {
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.transparent),
-                          borderRadius: BorderRadius.all(Radius.circular(15.0))),
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(15.0))),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.greenAccent),
                         borderRadius: BorderRadius.all(Radius.circular(15.0)),
@@ -95,7 +117,8 @@ class RegistrationScreen extends StatelessWidget {
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.transparent),
-                          borderRadius: BorderRadius.all(Radius.circular(15.0))),
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(15.0))),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.greenAccent),
                         borderRadius: BorderRadius.all(Radius.circular(15.0)),
@@ -114,7 +137,23 @@ class RegistrationScreen extends StatelessWidget {
                 Container(
                   width: double.infinity,
                   child: FlatButton(
-                    onPressed: () {},
+                    onPressed: (){},
+                    // onPressed: () async {
+                    //   final email = _emailController.text.toString().trim();
+                    //   final pass = _passController.text.toString().trim();
+                    //   final name = _nameController.text.toString().trim();
+                    //   final url = _imageController.text.toString().trim();
+
+                    //   bool result = await registerUser(email, pass, name, url);
+
+                    //   if (result) {
+                    //     Navigator.of(context).push(MaterialPageRoute(
+                    //       builder: (context) => LoginScreen(),
+                    //     ));
+                    //   } else {
+                    //     print("error"); 
+                    //   }
+                    // },
                     child: Text("Register"),
                     textColor: Colors.white,
                     padding: EdgeInsets.all(16.0),
